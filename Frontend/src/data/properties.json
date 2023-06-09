@@ -1,0 +1,78 @@
+[
+  {
+    "Id":1,
+    "Book_Name":"Kateryna",
+    "Author_Name":"Taras Shevchenko",
+    "Genre":"Fiction",
+    "Description":"A popular lyrical and everyday poem, one of the most famous works in the rich oeuvre of the famous poet. The book is based on the story of the plight of an ordinary woman who was seduced by a Muscovite officer. Taking advantage of his position and influence as a representative of the upper social stratum, he confesses his love to the girl and promises to take her to Moscow and marry her, but, having lost his mind, simply leaves her to her fate. All lovers of classical Ukrainian literature should buy the book Katerina.",
+    "Price":450,
+    "ImageUrl":"../assets/Images/BookImages/Shevchenko_Kateryna.png",
+    "PdfUrl":"../assets/Pdf_Books/shevchenkoKateryna.pdf",
+    "Quantity":12
+  },
+
+  {
+    "Id":2,
+    "Book_Name":"Kobzar",
+    "Author_Name":"Taras Shevchenko",
+    "Price":680,
+    "Description":"Kobzar is a seminal work of Ukrainian literature written by Taras Shevchenko, a renowned poet, artist, and national hero. First published in 1840, Kobzar is a collection of lyrical poems, ballads, and folk songs that encapsulates the spirit of the Ukrainian people and their struggle for freedom and identity during a time of political oppression.The book is named after the traditional Ukrainian musical instrument, the kobza, which was played by wandering bards known as kobzars. Shevchenko, himself a former serf and advocate for social justice, drew inspiration from Ukrainian folklore, history, and his personal experiences to create a poignant and deeply emotional collection.",
+    "ImageUrl":"../assets/Images/BookImages/Kobzar.jpg",
+    "PdfUrl":"../assets/Pdf_Books/Kobzar.pdf",
+    "Quantity":12
+  },
+
+  {
+    "Id":3,
+    "Book_Name":"Haydamaky",
+    "Author_Name":"Taras Shevchenko",
+    "Price":325,
+    "ImageUrl":"../assets/Images/BookImages/Hajdamakyjpg.jpg"
+  },
+
+    {
+      "Id": 4,
+      "Book_Name": "Internat",
+      "Author_Name": "Serhii Zhadan",
+      "Price": 340,
+      "ImageUrl":"../assets/Images/BookImages/Internat.jpg"
+    },
+    {
+      "Id": 5,
+      "Book_Name": "Tyhrolovy",
+      "Author_Name": "Ivan Bahriany",
+      "Price": 460,
+      "ImageUrl":"../assets/Images/BookImages/tyhrolovy.jpg"
+    },
+    {
+      "Id": 6,
+      "Book_Name": "Tini zabutykh predkiv",
+      "Author_Name": "Oles Honchar",
+      "Price": 590,
+      "ImageUrl":"../assets/Images/BookImages/tiniZabut.jpg"
+    },
+    {
+      "Id": 7,
+      "Book_Name": "Kaydasheva sim'ya",
+      "Author_Name": "Ivan Nechui-Levytskyi",
+      "Price": 490,
+      "ImageUrl":"../assets/Images/BookImages/Kaidasheva.png"
+    },
+    {
+      "Id": 8,
+      "Book_Name": "Marusya Churay",
+      "Author_Name": "Hryhir Tyutyunnik",
+      "Price": 520,
+      "ImageUrl":"../assets/Images/BookImages/MarusyaChuray.png"
+    },
+    {
+      "Id": 9,
+      "Book_Name": "Toreadory z Vasiukivki",
+      "Author_Name": "Vsevolod Nestayko",
+      "Price": 190,
+      "ImageUrl":"../assets/Images/BookImages/toreadory.jpg"
+    }
+
+
+
+]

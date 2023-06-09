@@ -1,0 +1,108 @@
+<div class="container" style="width: 600px; margin-top: 50px;">
+
+  <section class="panel panel-default">
+<div class="panel-heading">
+<h3 class="panel-title">Add new book</h3>
+</div>
+<div class="panel-body">
+
+<form [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
+
+<!-- form-group // -->
+
+   <div class="form-group">
+    <label for="name" class="col-sm-3 control-label">Author</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" name="name" id="name" placeholder="Author" formControlName="author">
+    </div>
+  </div> <!-- form-group // -->
+  <div class="form-group">
+    <label for="name" class="col-sm-3 control-label">Book Name</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" name="name" id="name" placeholder="Book Name" formControlName="bookName">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="name" class="col-sm-3 control-label">Genre</label>
+
+  <div class="form-check">
+
+    <div class="col-sm-9">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Fiction" [(ngModel)]="bookGenreRadio" [ngModelOptions]="{standalone: true}">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Fiction
+      </label>
+    </div>
+
+    <div class="col-sm-9">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="NonFiction" [(ngModel)]="bookGenreRadio" [ngModelOptions]="{standalone: true}">
+      <label class="form-check-label" for="flexRadioDefault1">
+        NonFiction
+      </label>
+    </div>
+
+    <div class="col-sm-9">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Kids" [(ngModel)]="bookGenreRadio" [ngModelOptions]="{standalone: true}">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Kids
+      </label>
+    </div>
+
+
+  </div>
+  </div>
+
+   <!-- form-group // -->
+  <div class="form-group">
+    <label for="about" class="col-sm-3 control-label">Description</label>
+    <div class="col-sm-9">
+      <textarea class="form-control" formControlName="description"></textarea>
+    </div>
+  </div> <!-- form-group // -->
+  <div class="form-group">
+    <div class="row">
+
+      <div class="col-sm-3">
+        <label for="qty" class="col-sm-3 control-label">Quantity</label>
+     <input type="text" class="form-control" name="qty" id="qty" placeholder="pcs." formControlName="quantity">
+      </div>
+
+
+      <div class="col-sm-3">
+        <label for="qty" class="col-sm-3 control-label">Price</label>
+     <input type="text" class="form-control" name="price" id="price" placeholder="grn." formControlName="price">
+      </div>
+
+
+    </div>
+
+  </div> <!-- form-group // -->
+
+  <div class="form-group">
+    <!-- <label for="name" class="col-sm-3 control-label">Load Image</label> -->
+    <div class="col-sm-3" style="display:inline-block;">
+      <label class="control-label small" for="file_img">Image (jpg/png):</label> <input type="file" name="file_img">
+    </div>
+
+
+      <!-- <label for="name" class="col-sm-3 control-label">Load Pdf</label> -->
+      <div class="col-sm-3"  style="display:inline-block; margin-left: 75px;">
+        <label class="control-label small" for="file_pdf">Document (pdf):</label> <input type="file" name="file_img">
+      </div>
+
+
+  </div> <!-- form-group // -->
+
+
+  <div class="form-group" style="margin-top: 15px;">
+    <div class="col-sm-offset-3 col-sm-9">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </div> <!-- form-group // -->
+</form>
+
+</div><!-- panel-body // -->
+</section><!-- panel// -->
+
+
+</div> <!-- container// -->

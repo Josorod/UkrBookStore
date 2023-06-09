@@ -1,0 +1,26 @@
+
+
+<div class="container" style="margin-top: 70px; margin-bottom: 100px;">
+  <label>Find Book by name: &nbsp; </label>
+<input [(ngModel)]='Book_Name' type="search" placeholder="Search" aria-label="Search" style="width: 150px ;">
+<button class="btn btn-success buttonMargins" type="button" (click)="onBookNameFilter()">Search</button>
+<button class="btn btn-primary" type="button" (click)="onBookNameFilterClear()">Clear</button> &nbsp;
+
+<label>Sort by &nbsp;</label>
+<select [(ngModel)] = 'SortbyParam'>
+  <option value="Book_Name">Book Name</option>
+  <option value="Price">Price</option>
+</select>
+<button class="btn btn-info buttonMargins" type="button" (click) = "onSortDirection()">
+  <i *ngIf="SortDirection==='asc'" class="bi bi-arrow-bar-up"></i>
+  <i *ngIf="SortDirection==='desc'" class="bi bi-arrow-bar-down"></i>
+</button>
+  <div class="row">
+    <div *ngFor="let information of properties|filter:SearchBook:'Book_Name'|sort:[SortbyParam,SortDirection]"class="card">
+
+        <app-book_info_card [property]="information"></app-book_info_card>
+
+    </div>
+  </div>
+</div>
+

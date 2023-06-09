@@ -1,0 +1,20 @@
+
+      <div class="card-body text-center mx-auto">
+          <div class='container'>
+            <img class='img-thumbnail'
+            src="{{property.ImageUrl}}"
+            style="width: 175px;"/>
+            <img *ngIf="!property.ImageUrl" class="img-thumbnail" style="width: 175px" src="../assets/Images/BookImages/default.png">
+              <div class="containers">
+                <h4 class="card-title font-weight-bold">{{property.Book_Name}}</h4>
+                <h5 class="card-title">{{property.Author_Name}}</h5>
+                <p class="card-text">{{property.Price}} grn</p>
+                <a routerLink="/product-details/{{property.Id}}" class="btn details px-auto">View details</a><br />
+                <a href="#" class="btn cart px-auto" (click)="handleAddToCart()">ADD TO CART</a>
+              </div>
+
+          </div>
+      </div>
+
+
+
