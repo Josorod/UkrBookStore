@@ -30,6 +30,8 @@ artifacts/
 
 # Ignore npm packages
 node_modules/
+Frontend/.angular/cache/
+
 
 # Ignore TypeScript compile output
 dist/
