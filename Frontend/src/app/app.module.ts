@@ -26,6 +26,7 @@ import { AlertyfyService } from './services/alertyfy.service';
 import { AuthentificationService } from './services/authentification.service';
 import { SortPipe } from './Pipes/sort.pipe';
 import { CartItemComponent } from './cart-item/cart-item.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const appRoutes: Routes = [
   {path: '', component:Book_listComponent},
@@ -53,7 +54,8 @@ const appRoutes: Routes = [
       AddBookComponent,
       FilterPipe,
       SortPipe,
-      CartItemComponent
+      CartItemComponent,
+      ChatbotComponent
    ],
   imports: [
     BrowserModule,
