@@ -1,44 +1,56 @@
-
-<div class="chat-container">
+<!-- Toggle Chat Button -->
+<button (click)="toggleChat()" class="toggle-chat-button btn btn-success position-fixed bottom-0 end-0 m-4 fw-bold shadow-sm">
+    {{ isVisible ? 'Close Chat' : 'Open Chat' }}
+  </button>
     
-    <!-- Messages -->
-    <div class="messages" #messagesContainer>
-
-        <div *ngFor="let message of messages"
-            [ngClass]="{ 'user-message-container': message.user, 'bot-message-container': !message.user }">
-            <!-- Conditional image rendering -->
-
-            <img [src]="message.user ? userImagePath : botImagePath" [alt]="message.user ? 'User' : 'Chatbot'"
-                [ngClass]="{ 'user-img': message.user, 'bot-img': !message.user }">
-            
-            <!-- Message text -->
-            <div [ngClass]="{ 'user-message-text': message.user, 'bot-message-text': !message.user }">
-                {{ message.text }}
+  <!-- Chat Container -->
+  <div *ngIf="isVisible" class="container position-fixed bottom-0 end-0 mb-2 me-2">
+    <div class="row d-flex justify-content-end">
+      <div class="col-4">
+        <div class="card" style="background-color: #f4fcf1;">
+          <!-- Header with MessageCounter -->
+          <div class="card-header d-flex justify-content-between align-items-center p-3" style="border-top: 4px solid #abcf9d;">
+            <h5 class="mb-0">Support</h5>
+            <div class="d-flex flex-row align-items-center">
+              <!-- Clear Messages Icon -->
+              <i class="bi bi-trash me-3 text-muted" (click)="clearMessages()" style="cursor: pointer;"></i>
+              <!-- Close Chat Icon -->
+              <i class="bi bi-x" (click)="toggleChat()" style="cursor: pointer;"></i>
             </div>
-        </div>
-
-        <!-- Loading message -->
-        <div class="bot-message-container">
-            <img [src]=botImagePath [alt]="'Chatbot'" [ngClass]="{ 'bot-img': true }" *ngIf="isLoading">
-            <div class="message bot-message-text" *ngIf="isLoading">
-                Loading...
+          </div>
+          <!-- Chat Messages Section -->
+          <div class="card-body" style="position: relative; height: 400px; overflow-y: auto;">
+            <!-- Display each message dynamically -->
+            <div *ngFor="let message of messages">
+                <div *ngIf="message.sender === 'Bot'" class="d-flex flex-row justify-content-start">
+                  <img src="../../assets/Images/botImage.png" alt="Bot avatar" class="rounded-circle me-2" style="width: 45px; height: 45px;">
+                  <div>
+                    <p class="small p-2 mb-1 rounded-3 bg-body-tertiary">{{ message.content }}</p>
+                    <p class="small text-muted ms-3 message-timestamp">{{ message.time }}</p>
+                  </div>
+                </div>
+              
+                <div *ngIf="message.sender === 'User'" class="d-flex flex-row justify-content-end mb-4">
+                  <div>
+                    <p class="small p-2 mb-1 rounded-3 bg-success text-white">{{ message.content }}</p>
+                    <p class="small text-muted text-end me-3 message-timestamp">{{ message.time }}</p>
+                  </div>
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp" alt="User avatar" class="rounded-circle ms-2" style="width: 45px; height: 45px;">
+                </div>
+              </div>
+          </div>
+  
+          <!-- Input and Send Button -->
+          <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+            <div class="input-group mb-0">
+              <input [(ngModel)]="userMessage" type="text" class="form-control" placeholder="Type message" aria-label="Message input" (keydown.enter)="sendMessage()" />
+              <button (click)="sendMessage()" class="btn btn-success" type="button" style="padding-top: .55rem;">
+                Send
+              </button>
             </div>
+          </div>
         </div>
-
-        <!-- Error message -->
-        <div class="bot-message-container">
-            <img [src]=botImagePath [alt]="'Chatbot'" 
-            [ngClass]="{ 'bot-img': true }" *ngIf="errorOccurred"/>
-            <div class="message bot-message-text" *ngIf="errorOccurred">
-                {{ customErrorMessage }}
-            </div>
-        </div>
+      </div>
     </div>
-
-    <!-- Input form -->
-    <div class="input-container gradient-border">
-    <textarea class="gradient-border" [(ngModel)]="userInput" (keyup.enter)="sendMessage()" (input)="autoGrow($event)" placeholder="Type a message..."></textarea>
-    <button (click)="sendMessage()"><i class="bi bi-chat-dots-fill"></i></button>
-</div>
-
-</div>
+  </div>
+  

@@ -25,8 +25,6 @@ export class Navigation_barComponent implements OnInit {
         $("footer").toggleClass("text-white bg-dark");
         $("footer a").toggleClass(" text-white");
         $("nav a").toggleClass(" text-white");
-
-
       });
     });
 
